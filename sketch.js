@@ -10,30 +10,29 @@ let rows;
 let flowField = [];
 let particles = [];
 
-function mouseHandler() {
-  if (mouseIsPressed && mouseButton === RIGHT) setup();
-}
-
 function setup() {
+  particles = [];
+
   pixelDensity(1);
   resizeCanvas(innerWidth, innerHeight);
+  background(bgColor);
 
   cols = floor(width / scale);
   rows = floor(height / scale);
 
   flowField = new Array(cols * rows);
 
-  particles = [];
   for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
   }
+}
 
-  background(bgColor);
+function windowResized() {
+  setup();
 }
 
 let timeOff = 0;
 function draw() {
-  mouseHandler();
   // Clear the screen
   // background(bgColor, 2);
 
@@ -71,4 +70,7 @@ function draw() {
   timeOff += timeSpeed;
 }
 
-addEventListener("contextmenu", (e) => e.preventDefault());
+addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  setup();
+});
