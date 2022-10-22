@@ -1,7 +1,7 @@
 const xySpeed = 0.1;
 const timeSpeed = 0.02;
 const scale = 10;
-const flowForce = 1;
+const flowForce = 0.6;
 const particleCount = 1000;
 const bgColor = 0; // black
 
@@ -35,7 +35,7 @@ let timeOff = 0;
 function draw() {
   mouseHandler();
   // Clear the screen
-  background(bgColor, 1);
+  // background(bgColor, 2);
 
   // Update flow field
   let yOff = 0;

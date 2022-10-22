@@ -7,7 +7,7 @@ class Particle {
     this.acc = createVector(0, 0);
     this.maxSpeed = 4;
 
-    this.alpha = 10;
+    this.alpha = 1;
     this.color = 255;
   }
 
